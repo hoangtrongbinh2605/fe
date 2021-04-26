@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+<!-- cu phap -->
+<script>
+$(document).ready(function(){
+   var array = [];
+
+      // them value vao array
+      array.push('demo1');
+      array.push('demo2');
+      // 
+      // key: value
+      // 0: "demo1"
+      // 1: "demo2"
+      // // key: tu dong tao ra va bat dau tang tu 0
+      // length: 2
+      // cu phap: ten-arr[key]
+      // console.log(array[1])
+
+      // for (var i = 0; i < array.length; i++) {
+      //   console.log(array[i])
+      // }
+
+    //   array.map(function(value, key){
+    //     console.log(value)
+        
+    //   })
+
+    var object = {};
+        object['phone1'] = "ip";
+
+        // console.log(object)
+
+        // phone1: "ip"
+        // phone2: "ss"
+        // console.log(Object.keys(object).length)
+        // key:  do minh tao ra co the number or string
+        // value: chua numbẻr, string, array, object
+
+        object["phone3"] = array;
+        // cu phap: object[key][key][key]...
+
+        var object2 = {};
+          object2['email'] = "ip@gmail.com";
+          object2["pass"] = "111111";
+
+        object["phone4"] = object2;  
+
+
+        // console.log(object['phone4']['pass'])
+
+        // Object.keys(object).map(function(key, index){
+        //   console.log(object[key]['email'])
+        // })
+
+        var demo = 1;
+
+        // localStorage: 1 bo dem dung de luu tru data: luu tru tren browser
+        // chi chua data dang duong json(string)
+        // convert object => json => localStorage
+
+        var convert = JSON.stringify(object)
+
+        console.log(object)
+        console.log(convert)
+        
+        localStorage.setItem("binh", convert)
+
+});
+</script>
+</head>
+<body>
+</body>
+</html>

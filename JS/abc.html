@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){          
+            var html = '';
+            var demo = JSON.parse(localStorage.getItem("form"));
+            Object.keys(demo).map((key, index) => {
+               html += "<tr>" +
+                            "<td>" + demo[key]['username'] + "</td>" +
+                            "<td>" + demo[key]['email'] + "</td>" +
+                        "</tr>" ;
+            console.log(demo[key])
+            })
+            $("table tbody").append(html);
+           
+    });
+    </script>
+</head>
+<body>
+
+    <table>
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>email</th>
+            </tr>   
+        </thead>
+        <tbody>
+            
+			
+        </tbody>
+    </table>
+    
+    
+</body>
+</html>
+<!-- 
+jquery closest, prev, next.
+
+attr, val, text, this,find -->

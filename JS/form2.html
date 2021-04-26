@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <style type="text/css">
+        p {
+            background: red;
+            width: 250px;
+        }
+
+        .f1 {
+            float: left;
+        }
+
+        .f2 {
+            float: right;
+        }
+
+        div {
+            display: block;
+            margin: 0 auto;
+            width: 1004px;
+        }
+
+        span {
+            color: teal;
+        }
+    </style>
+    <div>
+        <form action="" class="f1">
+            <h2>Sign in</h2>
+            <input type="text" class="email" placeholder="Your Email..."><br>
+            <p class="err_email"></p>
+            <input type="password" class="pass" placeholder="Your Password..."><br>
+            <p class="err_pass"></p>
+            <input type="submit" value="SIGN IN">
+            <p class="err"></p>
+            <h1 class="login"></h1>
+        </form>
+        <form action="" class="f2">
+            <h2>Register</h2>
+            <input type="text" class="re_email" placeholder="Your Email..."><br>
+            <p class="err_re_email"></p>
+            <input type="password" class="re_pass" placeholder="Your Password..."><br>
+            <p class="err_re_pass"></p>
+            <input type="password" class="re_pass2" placeholder="Confirm Password..."><br>
+            <p class="err_re_pass2"></p>
+            <input type="checkbox" class="more" name="checkbox[]" value="check">Sign up for exclusive updates,
+            discounts, new arrivals, contents and more!<br>
+            <p class="err_checkbox"></p>
+            <input type="submit" value="CREATE ACCOUNT"> By clicking 'Create Account', you agree to our <span>Privecy
+                policy</span>
+            <h1 class="register"></h1>
+        </form>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () { //cu phap
+            var getT_email = '';
+            var getT_pass = '';
+            $("form.f2").submit(function () {
+                var getRe_email = $("input.re_email").val();
+                var getRe_pass = $("input.re_pass").val();
+                var getRe_pass2 = $("input.re_pass2").val();
+                var getMore = $("input.more:checked").val();
+                
+                var regis = true;
+
+                $("p.err_re_email").text("");
+                $("p.err_re_pass").text("");
+                $("p.err_re_pass2").text("");
+                $("p.err_checkbox").text("");
+
+                if (getRe_email == "") {
+                    $("p.err_re_email").text("Please input email")
+                    regis = false;
+                }
+                if (getRe_pass == "") {
+                    $("p.err_re_pass").text("Please input password")
+                    regis = false;
+                }
+                if (getRe_pass2 == "") {
+                    $("p.err_re_pass2").text("Please input confirm password")
+                    regis = false;
+                }
+                if (getRe_pass != getRe_pass2) {
+                    $("p.err_re_pass2").text("Password and Confirm password does not match")
+                    regis = false;
+                }
+                if (getMore != "check") {
+                    $("p.err_checkbox").text("Please click on the checkbox")
+                    regis = false;
+                }
+
+                if (regis) {
+                    $("h1.register").text("Register Successfully")
+                    getT_email = getRe_email;
+                    getT_pass = getRe_pass;
+                }    
+                           
+                return false;
+            })
+            $("form.f1").submit(function () {
+                var getEmail = $("input.email").val();
+                var getPass = $("input.pass").val();
+                var login = true;
+                $("p.err_email").text("");
+                $("p.err_pass").text("");
+                $("p.err").text("");
+
+                if (getEmail == "") {
+                    $("p.err_email").text("Please input email")
+                    login = false;
+                }
+                if (getPass == "") {
+                    $("p.err_pass").text("Please input password")
+                    login = false;
+                }
+                if(login) {
+                    if(getEmail == getT_email && getT_pass == getPass) {
+                        $("h1.login").text("Login Successfully")
+                    }else {
+                        $("p.err").text("Email or password is not correct")
+                    }
+                }
+                
+                return false;
+            })
+
+
+        })
+    </script>
+</body>
+
+</html>

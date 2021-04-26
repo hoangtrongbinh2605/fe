@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.navbar-dark .navbar-brand{
+    font-size: 22px;
+    font-weight: 800;
+    color: white;
+}
+.navbar-dark .navbar-brand:hover{
+    color: lightgrey;
+}
+.navbar-dark .navbar-nav .nav-link{
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+}
+.navbar-light .navbar-nav .nav-link:hover{
+    color: lightgrey;
+}
+div.cover{
+    background-image: url(background.jpg);  
+    background-size: cover;
+    margin-bottom: 20px;
+}
+div.title{
+    text-align: center;
+    padding: 200px 0;
+}
+h1{
+    font-weight: bold;
+    font-size: 80px
+}
+span{
+    font-size: 24px;
+}
+ul.content li{
+    padding: 10px 0;
+    border-bottom: 1px solid lightgrey;
+}
+h2{
+    font-weight: 800;
+    font-size: 36px;
+}
+h2:hover{
+    color: #0085a1;
+}
+h3:hover{
+    color: #0085a1;
+}
+ul.content p{
+    color: gray;
+}
+ul.content a{
+    color: black;
+}
+span.btn-primary{
+    background-color: #0085a1;
+    text-transform: uppercase;
+}
+footer{
+    text-align: center;
+    border-top: 1px solid lightgrey;
+    padding: 40px 0;
+    margin-top: 20px;
+}
+ul.contact li{
+    display: inline-block;    
+}
+ul.contact li img{
+    width: 50px;
+    height: 50px; 
+}
+
+@media only screen and (max-width: 768px) {
+    .bg-custome{
+        background-color: white;
+    }
+    .navbar-dark .navbar-brand{
+        color: black;
+    } 
+    .navbar-dark .navbar-toggler-icon{
+        background-image: url(menu.png);
+    }
+
+}

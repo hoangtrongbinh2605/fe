@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--   - goi thu vien vao:
+      + goi truc tieo trang chu: mat mang, trang chu gap van de
+      + downfile ve roi goi vao nhu css -->
+
+ <style type="text/css">
+     .demo {
+        background-color: red;
+     }
+     .xxx {
+        background-color: blue;
+     }
+ </style>     
+
+</head>
+<body>
+
+<p>This is a paragraph.</p>
+<!-- <button class="add">Add</button>
+<button class="remove">REmove</button> -->
+<button>Hide/Show</button>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+<script>
+$(document).ready(function(){
+  
+    // $("p").addClass("demo")
+    // $("p").removeClass("demo")
+
+    // $("p").hide(); //show()
+
+    // if else, for
+        // alert("thong bao len man hinh")
+        // console.log("hien thi ket qua ra de xem")
+
+     // hasClass("ten class"): dung de kiem tra 1 class co trong the html?
+     // co => true/ false   
+    
+    // console.log($("p").hasClass("demo"))
+
+    // var checkClass = $("p").hasClass("xxx");
+    // if(checkClass) {
+    //     console.log("co class demo")
+    // } else {
+    //     console.log("k co")
+    // }
+
+    // $("button.add").click(function(){
+    //     $("p").addClass("demo");
+    //     // $("p").hide();
+    // })
+
+    // $("button.remove").click(function(){
+    //     $("p").removeClass("demo");
+    // })
+
+    //  $("button.add").click(function(){
+    //     $("p").addClass("demo");
+        
+    // })
+
+    // $("button.remove").click(function(){
+    //     var checkClass = $("p").hasClass("demo");
+    //     if(checkClass) {
+    //         $("p").removeClass("demo");
+    //     } else {
+    //         $("p").addClass("xxx");
+    //     }
+        
+    // })
+
+    $("button").click(function(){
+        var checkClass=$("p").hasClass("zzz");
+        if(!checkClass){
+            $("p").addClass("zzz");
+            $("p").hide();
+        } else{
+            $("p").removeClass("zzz");
+            $("p").show();
+        }  
+    })
+
+});
+</script>
+</body>
+</html>

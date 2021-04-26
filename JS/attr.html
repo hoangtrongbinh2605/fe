@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        img.i{
+            width: 800px;
+            height: 400px;
+        }
+        ul li{
+            width: 197px;
+            display: inline-block;
+        }
+        ul li img{
+            width: 100%;
+            height: 197px;
+        }
+
+
+        /* .hide {
+            display: none;
+        }
+
+        .show {
+            display: block;
+        }
+
+        ul li {
+            display: inline-block;
+            margin: 0 10px;
+            background-color: red;
+        } */
+    </style>
+</head>
+
+<body>
+    <img class="i" src="https://images.alphacoders.com/980/980276.jpg">
+    <ul>
+        <li><img class="i1" src="https://sportsshow.net/wp-content/uploads/2019/05/Cristiano-Ronaldo-Wallpapers.jpg"></li>
+        <li><img class="i2" src="https://i.pinimg.com/originals/60/db/2e/60db2ed85339380d5729e7f8b7293ecc.jpg"></li>
+        <li><img class="i3" src="https://wallpaperaccess.com/full/2462158.jpg"></li>
+        <li><img class="i4" src="https://cutewallpaper.org/21/cristiano-ronaldo-celebration-wallpapers/Cristiano-Ronaldo-Celebration-Wallpapers-Wallpaper-Cave.jpg"></li>
+    </ul>
+
+    <a id="demo">zz</a>
+    <span class="demo">Click</span>
+
+    <!-- <div class="demo">
+        <ul>
+            <li class="d1">tin tuc</li>
+            <li class="d2">bong da</li>
+            <li class="d3">thoi trang</li>
+        </ul>
+
+        <div class="content">
+            <div class="hide show" id="d1">
+                tin tuc
+            </div>
+            <div class="hide" id="d2">
+                bong da
+            </div>
+            <div class="hide" id="d3">
+                thoi trang
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <form action="https://www.google.com/">
+        First name: <input type="text" name="FirstName" value="Mickey"><br>
+        Last name: <input type="text" name="LastName" value="Mouse"><br>
+        <input type="submit" value="Submit">
+    </form> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <script>
+$(document).ready(function(){
+
+    $("li img").click(function(){
+        var getSrc = $(this).attr("src");
+        $("img.i").attr("src", getSrc);
+        console.log(getSrc);
+    })
+
+//     $("a").click(function(){
+//         var getId = $(this).attr("id");
+//         $('span.' + getId).addClass('test');
+//     })
+
+    // $("li").click(function(){
+    //     var getClass = $(this).attr("class");
+    //     var checkClass = $("div#" +getClass).hasClass("show");
+    //     if(!checkClass){
+    //         $("div.hide").removeClass("show");
+    //         $("div#" +getClass).addClass("show");
+    //     }
+    // })
+
+    $("form").submit(function(){
+        return false;
+    })
+
+
+})
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+<style type="text/css">
+  p {
+    background: red;
+    width: 300px;
+  }
+</style>
+
+<form action="abc.html">
+    Username:<input type="text" class="username"><br>
+    <p class="err_name"></p>
+    Email:<input type="text" class="email"><br>
+    <p class="err_email"></p>
+    <input type="submit" value="Submit">
+</form>
+
+  
+  <script type="text/javascript">
+      $(document).ready(function(){ //cu phap
+        
+
+          $("form").submit(function(){         
+            var getName = $("input.username").val();
+            var getEmail = $("input.email").val();            
+            var demo = true;
+
+            $("p.err_name").text("");
+            $("p.err_email").text("");
+
+            if(getName == "") {
+              $("p.err_name").text("please input username")
+              demo = false;
+            }      
+            if(getEmail == "") {
+              $("p.err_email").text("please input email")
+              demo = false;
+            }  
+            if(demo){
+            // var abc = localStorage.getItem("form");
+            // if(abc== null){
+            //   localStorage.setItem("form",JSON.stringify({}))
+            // }
+            // var objectz = JSON.parse(abc);        
+            var objectz={}  
+            var object2={}
+                object2['username'] = getName;
+                object2['email']=getEmail;
+
+
+            var abc = localStorage.getItem("form");
+
+            if(abc){  
+              objectz = JSON.parse(abc);
+           
+            }
+            objectz[getName]=object2;   
+            var convert = JSON.stringify(objectz)
+            localStorage.setItem("form",convert)  
+            return true
+            }
+           
+            return false;
+          })
+       
+
+      })
+  </script>
+</body>
+</html>
+
+  <!-- 
+  var obj={}
+
+      lay local ra.
+      kiem tra xem co k.
+      obj = local.
+      obj ={
+        1:...
+      }
+
+
+
+      obj[2] = ...
+      {
+        1:...
+        2: ...
+      }
+
+      => localStorage(form) -->

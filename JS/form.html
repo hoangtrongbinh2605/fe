@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+<style type="text/css">
+  p {
+    background: red;
+  }
+</style>
+
+<form action="https://www.24h.com.vn/">
+    Họ và tên:<input type="text" class="fullname"><br>
+    <p class="err_name"></p>
+    Giới tính:<br>
+    <input type="radio" class="gender" name="gender" value="male"> Nam
+    <input type="radio" class="gender" name="gender" value="female"> Nữ<br>
+    <p class="err_gender"></p>
+    Sở thích:<br>
+    <input type="checkbox" class="interest" name="checkbox[]" value="soccer">Bóng đá<br>
+    <input type="checkbox" class="interest" name="checkbox[]" value="music">Nghe nhạc<br>
+    <p class="err_checkbox"></p>
+    Chọn:<br>
+    <select class="myselect">
+        <option value="a">a</option>
+        <option value="b">b</option>
+        <option value="c">c</option>
+    </select><br><br>
+    <textarea class="content"></textarea>
+    <p class="err_content"></p>
+
+    <input type="submit" value="Submit">
+</form>
+
+  
+  <script type="text/javascript">
+      $(document).ready(function(){ //cu phap
+
+          $("form").submit(function(){
+         
+            var getName = $("input.fullname").val();
+            if($("input.gender").is(":checked")){
+                var getGender = $("input.gender:checked").val();
+            }else{
+                var getGender = ""
+            }
+            
+            var val = [];
+            $(':checkbox:checked').each(function(i){
+              val [i] = $(this).val()
+            });  
+
+            var getSelect = $(".myselect option:selected").val();         
+            console.log(getSelect)   
+            var getContent = $(".content").val();
+            var demo = true;
+
+            $("p.err_name").text("");
+            $("p.err_gender").text("");
+            $("p.err_content").text("");
+
+            if(getName == "") {
+              $("p.err_name").text("vui long nhap ho va ten")
+              demo = false;
+            } 
+
+            if(getGender == "") {
+              $("p.err_gender").text("vui long chon gioi tinh")
+              demo = false;
+            } 
+
+            if(getContent == "") {
+              $("p.err_content").text("vui long nhap noi dung")
+              demo = false;
+            } 
+
+            if(demo) {
+              return true;
+            }
+            console.log(demo)
+            return false;
+          })
+       
+
+      })
+  </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        ul.menu{
+            width: 150px;
+            background-color: #464646;
+            color: white;
+        }
+        li.i1{
+            padding: 5px 0;
+            border-bottom:solid grey;
+        }
+        ul.menu-sub{
+            display: none;
+        }
+        
+    </style> 
+</head>
+<body>
+    <ul class="menu">
+        <li class="i1">Tin tức
+            <ul class="menu-sub">
+                <li>Lịch thi đấu</li>
+                <li>Video</li>
+                <li>Lịch thi đấu hôm nay</li>
+                <li>Ngoại hạng Anh</li>
+            </ul>
+        </li>
+        <li class="i1">Bóng đá
+            <ul class="menu-sub">
+                <li>Lịch thi đấu</li>
+                <li>Video</li>
+                <li>Lịch thi đấu hôm nay</li>
+                <li>Ngoại hạng Anh</li>
+            </ul>
+        </li>
+        <li class="i1">Thế giới
+            <ul class="menu-sub">
+                <li>Lịch thi đấu</li>
+                <li>Video</li>
+                <li>Lịch thi đấu hôm nay</li>
+                <li>Ngoại hạng Anh</li>
+            </ul>
+        </li>
+        <li class="i1">Video
+            <ul class="menu-sub">
+                <li>Lịch thi đấu</li>
+                <li>Video</li>
+                <li>Lịch thi đấu hôm nay</li>
+                <li>Ngoại hạng Anh</li>
+            </ul>
+        </li>
+        <li class="i1">Thời trang
+            <ul class="menu-sub">
+                <li>Lịch thi đấu</li>
+                <li>Video</li>
+                <li>Lịch thi đấu hôm nay</li>
+                <li>Ngoại hạng Anh</li>
+            </ul>
+        </li>
+        <li class="i1">Pháp luật
+            <ul class="menu-sub">
+                <li>Lịch thi đấu</li>
+                <li>Video</li>
+                <li>Lịch thi đấu hôm nay</li>
+                <li>Ngoại hạng Anh</li>
+            </ul>
+        </li>
+    </ul>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+<script>
+$(document).ready(function(){
+    
+    $("li.i1").click(function(){
+        var checkClass = $(this).hasClass("zz");
+        if(!checkClass){
+            $("li.i1").removeClass("zz");
+            $(this).addClass("zz");
+            $(".menu-sub").hide();
+            $(this).find("ul").show();
+        }else{
+            $(this).removeClass("zz");
+            $(this).find("ul").hide();
+        }
+    })
+})
+</script>
+</body>
+</html>

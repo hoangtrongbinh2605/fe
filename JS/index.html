@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    var object = {};
+    object['obj1']="aa";
+    object['obj2']="bb";
+
+    var object2 = {};
+          object2['name'] = "binh";
+          object2["age"] = "22";
+
+    object['obj3'] = object2;
+    
+    var convert = JSON.stringify(object)
+    localStorage.setItem("data",convert)
+    // Object.keys(object).map(function(key, index){
+    // console.log(object[key])
+    // })
+
+</script>
+<body>
+    
+</body>
+</html>
